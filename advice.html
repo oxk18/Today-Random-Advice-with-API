@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today Random Advice</title>
+</head>
+<body>
+    <div class="container">
+        <div id="results"></div>
+        <!--<button class="btn" id="getData">Get data</button>-->
+    </div>
+
+    <script>
+    const resBtn = document.createElement('#getDate');    
+    const resDiv = document.createElement('#results');    
+
+    window.onload = function getAdvice() {fetch('https://api.adviceslip.com/advice').then(response => { return response.json();
+    }).then(adviceData => { const Adviceobj = adviceData.slip;
+    resDiv.innerHTML = `<p>${Adviceobj.advice}</p>`;}).catch(error => { console.log(error);});}
+</script>
+
+</body>
+</html>
+
+
+
+
